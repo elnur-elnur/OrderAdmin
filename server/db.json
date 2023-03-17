@@ -1,0 +1,90 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "title": "Dondurma 1",
+      "image": "",
+      "price": 15.0
+    },
+    {
+      "id": 2,
+      "title": "Dondurma 2",
+      "image": "",
+      "price": 22.0
+    },
+    {
+      "id": 3,
+      "title": "Dondurma 3",
+      "image": "",
+      "price": 17.5
+    },
+    {
+      "id": 4,
+      "title": "Dondurma 4",
+      "image": "",
+      "price": 76.4
+    },
+    {
+      "id": 5,
+      "title": "Dondurma 5",
+      "image": "",
+      "price": 15.0
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "Elnur"
+    },
+    {
+      "id": 2,
+      "name": "Tahir"
+    },
+    {
+      "id": 3,
+      "name": "Aysel"
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "title": "masa 1"
+    },
+    {
+      "id": 2,
+      "title": "masa 2"
+    },
+    {
+      "id": 3,
+      "title": "masa 3"
+    },
+    {
+      "id": 4,
+      "title": "masa 4"
+    },
+    {
+      "id": 5,
+      "title": "masa 5"
+    },
+    {
+      "id": 6,
+      "title": "masa 6"
+    },
+    {
+      "id": 7,
+      "title": "masa 7"
+    },
+    {
+      "id": 8,
+      "title": "masa 8"
+    },
+    {
+      "id": 9,
+      "title": "masa 9"
+    },
+    {
+      "id": 10,
+      "title": "masa 10"
+    }
+  ]
+}

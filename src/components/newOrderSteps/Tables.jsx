@@ -7,8 +7,8 @@ const Tables = () => {
   const dispatch = useDispatch();
   const { data: tables = [], isError, isLoading } = useGetTablesQuery();
 
-  const onSaveItem = (id, type) => {
-    type === "table" && dispatch(selectTable(id));
+  const onSaveItem = (table, type) => {
+    type === "table" && dispatch(selectTable(table));
   };
 
   return isLoading ? (
@@ -24,7 +24,7 @@ const Tables = () => {
           <div
             key={table.id}
             className="inline-flex justify-center items-center bg-blue-300 h-[150px] hover:cursor-pointer hover:bg-green-100"
-            onClick={() => onSaveItem(table.id, "table")}
+            onClick={() => onSaveItem(table, "table")}
           >
             {table.title}
           </div>

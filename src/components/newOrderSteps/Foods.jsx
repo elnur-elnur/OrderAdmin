@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useGetFoodsQuery } from "../../store";
 import { useDispatch } from "react-redux";
-import { createdOrder } from "../../store/selectedTableSlice";
+import {
+  selectedFoods,
+  selectedFoodsCount,
+  selectedFoodsPrice,
+} from "../../store/selectedTableSlice";
 
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -39,7 +43,12 @@ const Foods = () => {
 
   useEffect(() => {
     calcCount();
+    dispatch(selectedFoodsCount(count));
   }, [count, foodPrice]);
+
+  useEffect(() => {
+    dispatch(selectedFoodsPrice(calcedPrice));
+  }, [calcedPrice]);
 
   return (
     <div className="bg-gray-200 p-4 my-5">
@@ -62,6 +71,7 @@ const Foods = () => {
                   id={food.id}
                   value={food.title}
                   onClick={() => {
+                    dispatch(selectedFoods(food));
                     setfoodPrice(food.price);
                     calcCount();
                   }}

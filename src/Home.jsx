@@ -8,15 +8,24 @@ import Foods from "./components/newOrderSteps/Foods";
 import { useDispatch, useSelector } from "react-redux";
 import InfoBlock from "./components/info/InfoBlock";
 import SideBar from "./components/layout/SideBar";
+import OrderTable from "./components/orderTable";
 
 const Home = () => {
   const [newOrder, setnewOrder] = useState(false);
+  const [finishOrder, setfinishOrder] = useState(false);
   const dispatch = useDispatch();
+  const _state = useSelector((state) => state);
   const reducerTableId = useSelector((state) => state.table.selectedTableId);
+  const reducerTables = useSelector((state) => state.table.tables);
   const reducerPersonId = useSelector((state) => state.table.personId);
 
   const createOrder = () => {
     setnewOrder(true);
+  };
+
+  const createOrderMethod = () => {
+    dispatch(createdOrder(_state.table));
+    setfinishOrder(true);
   };
 
   return (
@@ -49,19 +58,18 @@ const Home = () => {
               </>
             )}
 
-            {reducerTableId && reducerPersonId && (
+            {reducerTableId && reducerPersonId && !finishOrder && (
               <>
                 <Foods />
-                <Button
-                  variant="contained"
-                  onClick={() => dispatch(createdOrder(2))}
-                >
+                <Button variant="contained" onClick={createOrderMethod}>
                   Elave et
                 </Button>
               </>
             )}
           </div>
         )}
+
+        {finishOrder && <OrderTable />}
 
         <p className="mt-auto text-center">
           © Algoritma - Fintech. Bütün hüquqlar qorunur.
